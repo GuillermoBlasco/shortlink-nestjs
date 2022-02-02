@@ -1,0 +1,12 @@
+version: '3'
+volumes:
+  dynamodb_data:
+services:
+  sqldb:
+    image: postgres:13
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: shortlink
+    ports:
+      - "5009:5432"
